@@ -1,6 +1,6 @@
 {
-  "name": "Next practices - Boilerplate",
-  "short_name": "Next practices",
+  "name": "Nice Trips",
+  "short_name": "Nice Trips",
   "icons": [
     {
       "src": "/img/icon-192.png",
@@ -14,7 +14,7 @@
     }
   ],
   "background_color": "#06092B",
-  "description": "Boilerlate using Typescript, React, NextJS and Styled Components!",
+  "description": "Travel tips to guide your dreams around the world!",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#06092B"
