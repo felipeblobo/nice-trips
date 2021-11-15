@@ -3,19 +3,23 @@ import React from 'react';
 import { CloseOutline } from '@styled-icons/evaicons-outline/CloseOutline';
 import { Body, Content, Heading } from './styles';
 
-const AboutTemplate = () => {
+export type PageTemplateProps = {
+  heading: string;
+  body: string;
+};
+
+const PageTemplate = ({ heading, body }: PageTemplateProps) => {
   return (
     <Content>
       <LinkWrapper href="/">
         <CloseOutline size={32} />
       </LinkWrapper>
-      <Heading>Nice Trips!</Heading>
+      <Heading>{heading}</Heading>
       <Body>
-        This site intend to <span>inspire</span> people to <span>dream </span>
-        with outstanding places around the world!
+        <div dangerouslySetInnerHTML={{ __html: body }} />
       </Body>
     </Content>
   );
 };
 
-export default AboutTemplate;
+export default PageTemplate;
