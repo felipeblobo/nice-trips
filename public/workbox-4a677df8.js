@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-empty-function */
-/* eslint-disable no-func-assign */
 /* eslint-disable no-empty */
+/* eslint-disable no-func-assign */
+/* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable no-undef */
 define('./workbox-4a677df8.js', ['exports'], function (t) {
   'use strict';

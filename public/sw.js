@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-async-promise-executor */
 /* eslint-disable no-undef */
 if (!self.define) {
@@ -6,42 +5,42 @@ if (!self.define) {
       'require' !== e && (e += '.js');
       let s = Promise.resolve();
       return (
-        t[e] ||
+        n[e] ||
           (s = new Promise(async (s) => {
             if ('document' in self) {
-              const t = document.createElement('script');
-              (t.src = e), document.head.appendChild(t), (t.onload = s);
+              const n = document.createElement('script');
+              (n.src = e), document.head.appendChild(n), (n.onload = s);
             } else importScripts(e), s();
           })),
         s.then(() => {
-          if (!t[e]) throw new Error(`Module ${e} didn’t register its module`);
-          return t[e];
+          if (!n[e]) throw new Error(`Module ${e} didn’t register its module`);
+          return n[e];
         })
       );
     },
-    s = (s, t) => {
-      Promise.all(s.map(e)).then((e) => t(1 === e.length ? e[0] : e));
+    s = (s, n) => {
+      Promise.all(s.map(e)).then((e) => n(1 === e.length ? e[0] : e));
     },
-    t = { require: Promise.resolve(s) };
-  self.define = (s, n, i) => {
-    t[s] ||
-      (t[s] = Promise.resolve().then(() => {
-        let t = {};
-        const a = { uri: location.origin + s.slice(1) };
+    n = { require: Promise.resolve(s) };
+  self.define = (s, c, i) => {
+    n[s] ||
+      (n[s] = Promise.resolve().then(() => {
+        let n = {};
+        const t = { uri: location.origin + s.slice(1) };
         return Promise.all(
-          n.map((s) => {
+          c.map((s) => {
             switch (s) {
               case 'exports':
-                return t;
+                return n;
               case 'module':
-                return a;
+                return t;
               default:
                 return e(s);
             }
           }),
         ).then((e) => {
           const s = i(...e);
-          return t.default || (t.default = s), t;
+          return n.default || (n.default = s), n;
         });
       }));
   };
@@ -55,51 +54,63 @@ define('./sw.js', ['./workbox-4a677df8'], function (e) {
       [
         {
           url: '/_next/server/middleware-manifest.json',
-          revision: 'qot1trgV9uEHsuABRZO1z',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
+        },
+        {
+          url: '/_next/static/-NpwcB0Ps7gvhnFVScNbI/_buildManifest.js',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
+        },
+        {
+          url: '/_next/static/-NpwcB0Ps7gvhnFVScNbI/_middlewareManifest.js',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
+        },
+        {
+          url: '/_next/static/-NpwcB0Ps7gvhnFVScNbI/_ssgManifest.js',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
+        },
+        {
+          url: '/_next/static/chunks/0b7b90cd.26a3995d0dc7cc17.js',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
+        },
+        {
+          url: '/_next/static/chunks/163.72335dbe72e46813.js',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
         },
         {
           url: '/_next/static/chunks/651.cd440d205ca10b23.js',
-          revision: 'qot1trgV9uEHsuABRZO1z',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
         },
         {
-          url: '/_next/static/chunks/framework-91d7f78b5b4003c8.js',
-          revision: 'qot1trgV9uEHsuABRZO1z',
+          url: '/_next/static/chunks/framework-8957c350a55da097.js',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
         },
         {
           url: '/_next/static/chunks/main-2807bf6427d5c844.js',
-          revision: 'qot1trgV9uEHsuABRZO1z',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
         },
         {
-          url: '/_next/static/chunks/pages/_app-8f7e8d277fe71dda.js',
-          revision: 'qot1trgV9uEHsuABRZO1z',
+          url: '/_next/static/chunks/pages/%5Bslug%5D-42b4243ddc682902.js',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
+        },
+        {
+          url: '/_next/static/chunks/pages/_app-c66cd9871a498a72.js',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
         },
         {
           url: '/_next/static/chunks/pages/_error-ddb7477254ab31d2.js',
-          revision: 'qot1trgV9uEHsuABRZO1z',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
         },
         {
-          url: '/_next/static/chunks/pages/index-294cf3caba020b37.js',
-          revision: 'qot1trgV9uEHsuABRZO1z',
+          url: '/_next/static/chunks/pages/index-32986c95db419168.js',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
         },
         {
           url: '/_next/static/chunks/polyfills-5cd94c89d3acac5f.js',
-          revision: 'qot1trgV9uEHsuABRZO1z',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
         },
         {
-          url: '/_next/static/chunks/webpack-5c3c79a966bed850.js',
-          revision: 'qot1trgV9uEHsuABRZO1z',
-        },
-        {
-          url: '/_next/static/qot1trgV9uEHsuABRZO1z/_buildManifest.js',
-          revision: 'qot1trgV9uEHsuABRZO1z',
-        },
-        {
-          url: '/_next/static/qot1trgV9uEHsuABRZO1z/_middlewareManifest.js',
-          revision: 'qot1trgV9uEHsuABRZO1z',
-        },
-        {
-          url: '/_next/static/qot1trgV9uEHsuABRZO1z/_ssgManifest.js',
-          revision: 'qot1trgV9uEHsuABRZO1z',
+          url: '/_next/static/chunks/webpack-0aa107ee781aec8e.js',
+          revision: '-NpwcB0Ps7gvhnFVScNbI',
         },
         {
           url: '/img/hero-illustration.svg',
@@ -118,7 +129,7 @@ define('./sw.js', ['./workbox-4a677df8'], function (e) {
           revision: 'e3a0c31390db72fd374570f4a57c56b0',
         },
         { url: '/img/logo.svg', revision: '202525302ad30aca5b2b790d4b0b5796' },
-        { url: '/manifest.json', revision: '24cc5b0f9bf7c25f0a4ae693f55c5e8a' },
+        { url: '/manifest.json', revision: 'dc15319401681c63163b01302dbe2287' },
         { url: '/vercel.svg', revision: '4b4f1876502eb6721764637fe5c41702' },
       ],
       { ignoreURLParametersMatching: [] },
@@ -133,8 +144,8 @@ define('./sw.js', ['./workbox-4a677df8'], function (e) {
             cacheWillUpdate: async ({
               request: e,
               response: s,
-              event: t,
-              state: n,
+              event: n,
+              state: c,
             }) =>
               s && 'opaqueredirect' === s.type
                 ? new Response(s.body, {
