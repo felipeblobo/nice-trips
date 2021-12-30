@@ -3,6 +3,7 @@ import { CloseOutline } from '@styled-icons/evaicons-outline/CloseOutline';
 import { Body, Container, Gallery, Heading, Wrapper } from './styles';
 import Image from 'next/image';
 import { useRouter } from 'next/dist/client/router';
+import { NextSeo } from 'next-seo';
 
 type ImageProps = {
   url: string;
@@ -27,6 +28,20 @@ export default function PlacesTemplate({ place }: PlacesTemplateProps) {
 
   return (
     <>
+      <NextSeo
+        title={`${place.name} - Lobo Trips`}
+        description={place.description.html}
+        openGraph={{
+          images: [
+            {
+              url: place.gallery[0].url,
+              width: place.gallery[0].width,
+              height: place.gallery[0].height,
+              alt: `${place.name}`,
+            },
+          ],
+        }}
+      />
       <LinkWrapper href="/">
         <CloseOutline size={32} aria-label="Go back to map" />
       </LinkWrapper>
